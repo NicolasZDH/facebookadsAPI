@@ -1,0 +1,24 @@
+{
+  "name": "facebookadsapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pivot-Data/facebookadsAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pivot-Data/facebookadsAPI/issues"
+  },
+  "homepage": "https://github.com/Pivot-Data/facebookadsAPI#readme",
+  "dependencies": {
+    "next": "^10.2.3",
+    "react": "^17.0.2"
+  }
+}
