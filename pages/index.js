@@ -1,5 +1,5 @@
 function Home() {
-    return <div>Test - FacebookAdsAPI</div>
+    return <div>Home</div>
 }
 
 export default Home
