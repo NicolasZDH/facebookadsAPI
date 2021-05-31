@@ -18,8 +18,12 @@
   },
   "homepage": "https://github.com/Pivot-Data/facebookadsAPI#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "next": "^10.2.3",
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
-  }
+  },
+  "browser": { "fs": false, "path": false, "os": false}
 }
