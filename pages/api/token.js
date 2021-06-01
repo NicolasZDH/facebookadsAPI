@@ -5,7 +5,7 @@ export default async (req, res) => {
   const session = await getSession({ req })
 
   if (session) {
-    res.send(JSON.stringify(session, null, 2))
+    res.send(session.accessToken)
   } else {
     res.send({ error: 'You must be sign in to view the protected content on this page.' })
   }

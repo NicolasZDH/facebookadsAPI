@@ -33,21 +33,12 @@ export default function SignIn({ providers, csrfToken }) {
           All the marketing data you need, where you want.
         </p>
 
-        <Stack isInline marginTop={10}>
-          {Object.values(providers).map((provider) => {
-            if (provider.name === "Email") {
-              return;
-            }
-            return (
-              <div className={styles.grid}>
-                <a onClick={() => signIn(provider.id, { callbackUrl: 'https://auth.pivotdata.com.br/logged' })} className={styles.card}>
-                  <h3>Login {provider.name} &rarr;</h3>
-                  <p>Please Login Facebook, and start copy Facebook Ads data and paste it in Google Sheets.</p>
-                </a>
-              </div>
-            );
-          })}
-        </Stack>
+        <div className={styles.grid}>
+            <a onClick={() => signIn('facebook', { callbackUrl: 'https://auth.pivotdata.com.br/logged' })} className={styles.card}>
+              <h3>Login Facebook &rarr;</h3>
+              <p>Please Login Facebook, and start copy Facebook Ads data and paste it in Google Sheets.</p>
+            </a>
+        </div>
       </main>
 
       <footer className={styles.footer}>
@@ -71,7 +62,7 @@ SignIn.getInitialProps = async (context) => {
 
   if (session && res && session.accessToken) {
     res.writeHead(302, {
-      Location: "/",
+      Location: "/logged",
     });
     res.end();
     return;
