@@ -43,17 +43,16 @@ export default function Home({ providers, csrfToken }) {
             </div>
             </>
       )}
-      {
-        session && (
-            <>
-            <h1 className={styles.title}>
-              You are already <a>logged in!</a>
-            </h1>
+      {session && (
+        <>
+        <h1 className={styles.title}>
+          You are already <a>logged in!</a>
+        </h1>
 
-            <p className={styles.description}>
-              Please come back to your Google Sheets, and start copy and paste Facebook Ads data.
-            </p>
-            </>
+        <p className={styles.description}>
+          Please come back to your Google Sheets, and start copy and paste Facebook Ads data.
+        </p>
+        </>
       )}
       </main>
 
