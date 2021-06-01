@@ -1,29 +1,17 @@
 {
-  "name": "facebookadsapi",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "nextjs",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Pivot-Data/facebookadsAPI.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Pivot-Data/facebookadsAPI/issues"
-  },
-  "homepage": "https://github.com/Pivot-Data/facebookadsAPI#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "next": "^10.2.3",
-    "passport": "^0.4.1",
-    "passport-facebook": "^3.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
-  "browser": { "fs": false, "path": false, "os": false}
+    "@chakra-ui/react": "^1.6.3",
+    "next": "10.x",
+    "next-auth": "^3.24.1",
+    "react": "17.x",
+    "react-dom": "17.x"
+  }
 }
