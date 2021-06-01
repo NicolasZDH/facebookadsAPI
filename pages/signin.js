@@ -40,7 +40,7 @@ export default function SignIn({ providers, csrfToken }) {
             }
             return (
               <div className={styles.grid}>
-                <a onClick={() => signIn(provider.id, { callbackUrl: '/logged' })} className={styles.card}>
+                <a onClick={() => signIn(provider.id, { callbackUrl: 'https://auth.pivotdata.com.br/logged' })} className={styles.card}>
                   <h3>Login {provider.name} &rarr;</h3>
                   <p>Please Login Facebook, and start copy Facebook Ads data and paste it in Google Sheets.</p>
                 </a>
