@@ -1,17 +1,27 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
-  "private": true,
+  "name": "facebookadsapi",
+  "version": "1.0.0",
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "next dev"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasZDH/facebookadsAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicolasZDH/facebookadsAPI/issues"
+  },
+  "homepage": "https://github.com/NicolasZDH/facebookadsAPI#readme",
   "dependencies": {
     "@chakra-ui/react": "^1.6.3",
-    "next": "10.x",
+    "next": "^10.2.3",
     "next-auth": "^3.24.1",
-    "react": "17.x",
-    "react-dom": "17.x"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
