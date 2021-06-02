@@ -7,7 +7,7 @@ export default async (req, res) => {
   console.log('1.ate aqui ok')
   console.log(req.cookies)
   console.log('2.ate aqui ok')
-  const token = await jwt.getToken({ req, secret })
+  const token = await jwt.getToken({ req, secret})
   console.log('3.ate aqui ok')
   res.send(JSON.stringify(token, null, 2))
 }

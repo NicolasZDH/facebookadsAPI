@@ -79,7 +79,11 @@ export default NextAuth({
     async jwt(token, user, account, profile, isNewUser) {
         // Add access_token to the token right after signin
         if (account?.accessToken) {
+          console.log('tem accessToken')
           token.accessToken = account.accessToken
+        }
+        else{
+          console.log('n tem accessToken')
         }
         return token
     }
