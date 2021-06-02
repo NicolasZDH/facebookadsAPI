@@ -12,7 +12,7 @@ export default NextAuth({
       profile(profile, tokens) {
         return {
           id: profile.id,
-          name: profile.name,
+          name: 'Testeee',
           email: profile.email,
           access_token: tokens.access_token,
         }
