@@ -76,7 +76,7 @@ export default NextAuth({
     async redirect(url, baseUrl) { return baseUrl },
     async session(session, user, token) {
         // Add property to session, like an access_token from a provider.
-        session.accessToken = token.accessToken
+        //session.accessToken = token.accessToken
         return session
     },
     async jwt(token, user, account, profile, isNewUser) {
