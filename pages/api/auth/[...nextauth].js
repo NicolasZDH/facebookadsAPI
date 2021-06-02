@@ -77,6 +77,7 @@ export default NextAuth({
     async session(session, user, token) {
         // Add property to session, like an access_token from a provider.
         //session.accessToken = token.accessToken
+        session.accessToken = token
         return session
     },
     async jwt(token, user, account, profile, isNewUser) {
@@ -93,5 +94,5 @@ export default NextAuth({
   events: {},
 
   // Enable debug messages in the console if you are having problems
-  debug: false,
+  debug: true,
 })
