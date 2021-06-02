@@ -9,6 +9,15 @@ export default NextAuth({
     Providers.Facebook({
       clientId: process.env.FACEBOOK_ID,
       clientSecret: process.env.FACEBOOK_SECRET,
+      profile(profile, tokens) {
+        return {
+          id: profile.id,
+          name: profile.name,
+          email: profile.email,
+          image: profile.picture.data.url,
+          test: tokens
+        }
+      },
     })
   ],
   // Database optional. MySQL, Maria DB, Postgres and MongoDB are supported.
