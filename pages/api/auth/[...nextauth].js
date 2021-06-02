@@ -14,7 +14,7 @@ export default NextAuth({
           id: profile.id,
           name: 'Testeee',
           email: profile.email,
-          access_token: tokens.access_token,
+          access_token: tokens,
         }
       },
     })
