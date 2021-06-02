@@ -9,14 +9,7 @@ export default NextAuth({
     Providers.Facebook({
       clientId: process.env.FACEBOOK_ID,
       clientSecret: process.env.FACEBOOK_SECRET,
-      profile(profile, tokens) {
-        return {
-          id: profile.id,
-          name: 'Testeee',
-          email: profile.email,
-          access_token: tokens,
-        }
-      },
+      scope: "ads_read email"
     })
   ],
   // Database optional. MySQL, Maria DB, Postgres and MongoDB are supported.
@@ -82,10 +75,7 @@ export default NextAuth({
   callbacks: {
     async signIn(user, account, profile) { return true },
     async redirect(url, baseUrl) { return baseUrl },
-    async session(session, user, token) {
-        // Add property to session, like an access_token from a provider.
-        //session.accessToken = token.accessToken
-        session.accessToken = token
+    async session(session, user) {
         return session
     },
     async jwt(token, user, account, profile, isNewUser) {
