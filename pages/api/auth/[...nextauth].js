@@ -14,8 +14,7 @@ export default NextAuth({
           id: profile.id,
           name: profile.name,
           email: profile.email,
-          image: profile.picture.data.url,
-          test: tokens
+          access_token: tokens.access_token,
         }
       },
     })
@@ -86,7 +85,7 @@ export default NextAuth({
     async session(session, user, token) {
         // Add property to session, like an access_token from a provider.
         //session.accessToken = token.accessToken
-        session.accessToken = token
+        session.accessToken = token.access_token
         return session
     },
     async jwt(token, user, account, profile, isNewUser) {
