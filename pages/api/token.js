@@ -1,17 +1,15 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { getSession } from 'next-auth/client';
-import { getToken } from 'next-auth/jwt';
+import jwt from 'next-auth/jwt';
 
 const secret = process.env.SECRET;
-let accessToken;
+const signingKey = process.env.JWT_SIGNING_KEY;
+const encryptionKey = process.env.JWT_ENCRYPTION_KEY;
+const encryption = process.env.ENCRYPTION;
 
 export default async (req, res) => {
-  const token = await getToken({ req, secret });
-
+  const token = await jwt.getToken({ req, secret, signingKey, encryption,})
   if (token) {
-    accessToken = token.accessToken;
-    res.status(200).json(accessToken);
+      res.send(JSON.stringify(token.accessToken, null, 2))
   } else {
-    res.send({ error: 'You must be sign in to view the protected content on this page.' })
+      res.send({ error: 'You must be sign in to view the protected content on this page.' })
   }
 }

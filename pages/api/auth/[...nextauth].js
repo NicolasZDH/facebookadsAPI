@@ -33,7 +33,6 @@ export default NextAuth({
 
     // Seconds - How long until an idle session expires and is no longer valid.
     // maxAge: 30 * 24 * 60 * 60, // 30 days
-    maxAge: 60 * 60,
     // Seconds - Throttle how frequently to write to database to extend a session.
     // Use it to limit write operations. Set to 0 to always update the database.
     // Note: This option is ignored if using JSON Web Tokens
@@ -46,10 +45,12 @@ export default NextAuth({
   jwt: {
     // A secret to use for key generation (you should set this explicitly)
     // secret: 'INp8IvdIyeMcoGAgFGoA61DdBglwwSqnXJZkgz8PSnw',
-    secret: '9ebceee55f73007c27f0c84f68a18bf0b8cba7586258d75f53e20d662598d30c',
+    secret: process.env.SECRET,
+    signingKey: process.env.JWT_SIGNING_KEY,
+    //encryptionKey: process.env.JWT_ENCRYPTION_KEY,
     // Set to true to use encryption (default: false)
     // encryption: true,
-    encryption: true,
+    encryption: process.env.ENCRYPTION,
     // You can define your own encode/decode functions for signing and encryption
     // if you want to override the default behaviour.
     // encode: async ({ secret, token, maxAge }) => {},

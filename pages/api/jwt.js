@@ -2,12 +2,15 @@
 import jwt from 'next-auth/jwt';
 
 const secret = process.env.SECRET;
+const signingKey = process.env.JWT_SIGNING_KEY;
+const encryptionKey = process.env.JWT_ENCRYPTION_KEY;
+const encryption = process.env.ENCRYPTION;
 
 export default async (req, res) => {
-  console.log('1.ate aqui ok')
-  console.log(req.cookies)
-  console.log('2.ate aqui ok')
-  const token = await jwt.getToken({ req, secret})
-  console.log('3.ate aqui ok')
-  res.send(JSON.stringify(token, null, 2))
+  const token = await jwt.getToken({ req, secret, signingKey, encryption,})
+  if (token) {
+      res.send(JSON.stringify(token.accessToken, null, 2))
+  } else {
+      res.send({ error: 'You must be sign in to view the protected content on this page.' })
+  }
 }
