@@ -21,6 +21,8 @@ export default function Home({ providers, csrfToken }) {
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
+        <script src="public/bootstrap-tagsinput.js"></script>
+        <link rel="stylesheet" type="text/css" href="public/bootstrap-tagsinput.css"/>
       </Head>
 
       <main className={styles.main}>
